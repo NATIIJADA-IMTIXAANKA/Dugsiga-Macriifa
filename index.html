@@ -1,0 +1,2881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Natiija Imtixaanka Nakhliga - Hagardiid</title>
+  <style>
+    :root {
+      --primary: #002060;
+      --secondary: #007bff;
+      --accent: #ffffff;
+      --glow: #00e0ffcc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fb;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ========== ANIMATION ========== */
+    @keyframes curtain-slide {
+      0% {
+        transform: translateY(-120%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* ========== MODERN HEADER ========== */
+    header.curtain-header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--accent);
+      padding: 60px 30px;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      border-radius: 0 0 2rem 2rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      animation: curtain-slide 1s ease-out forwards;
+      letter-spacing: 5px;
+    }
+
+    /* ========== HEADER GLOW UNDERLINE ========== */
+    header.curtain-header::after {
+      content: '';
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      border-radius: 10px;
+      background: var(--glow);
+      box-shadow: 0 0 20px var(--glow);
+    }
+
+    /* ========== SUBHEADING (OPTIONAL) ========== */
+    .subheading {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #eef7ff;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      header.curtain-header {
+        font-size: 1.8rem;
+        padding: 50px 20px;
+      }
+      .subheading {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="curtain-header">
+    KUSOO DHAWOOW MAREEGTA NATIIJADA IMTIXAANKA EE DUGSIGA HAGARDIID
+    <div class="subheading">Welcome to the Hagardiid School Exam Results Portal.</div>
+  </header>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FINAL EXAM RESULTS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Library for Confetti Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      --primary-blue: #002060;
+      --secondary-blue: #007bff;
+      --accent-gold: #FFD700;
+      --light-gray: #f5f7fa;
+      --dark-gray: #333;
+      --success-green: #28a745;
+      --warning-orange: #fd7e14;
+      --danger-red: #dc3545;
+    }
+    
+    body {
+      font-family: 'Times New Roman', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--light-gray);
+      margin: 0;
+      padding: 20px;
+      color: var(--dark-gray);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 2000x;
+      margin: 30px auto;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      border-top: 5px solid var(--primary-blue);
+    }
+    
+    /* Modern Header Section */
+    .header-section {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    
+    .header-section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue), var(--primary-blue));
+      border-radius: 3px;
+    }
+    
+    .school-logo {
+      height: 80px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    
+    .school-name {
+      font-size: 35px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin: 10px 0 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .exam-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--secondary-blue);
+      margin: 5px 0;
+      background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .academic-year {
+      font-size: 18px;
+      color: #666;
+      font-weight: 500;
+      margin: 5px 0 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .academic-year::before,
+    .academic-year::after {
+      content: "✦✨"; 
+      color: var(--accent-gold);
+      margin: 0 10px;
+      font-size: 16px;
+    }
+    
+    /* Registration Input Section */
+    .registration-section {
+      background: light blue;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      margin: 20px 0;
+      border: 2px solid rgba(0,0,0,0.05);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .input-title {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 2px solid #e0e6ed;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      background-color: #f8fafc;
+    }
+    
+    .input-field:focus {
+      border-color: var(--secondary-blue);
+      box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+      outline: none;
+      background-color: white;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0,32,96,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,32,96,0.3);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Student Info Section - Modernized */
+    .student-info-container {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 30px;
+      border: 1px solid #e0e6ed;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .student-info-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-blue));
+    }
+    
+    .student-info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .student-info-title {
+      font-size: 22px;
+      color: var(--primary-blue);
+      font-weight: 800;
+      position: relative;
+      padding-left: 15px;
+    }
+    
+    .student-info-title::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 15px;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary-blue);
+    }
+    
+    .student-info-badge {
+      background: var(--secondary-blue);
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 400;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    /* Student Info Section - Modified for 3-3 layout */
+    .student-info-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .info-row {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: 1.2fr 1.8fr 1.5fr;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background: rgba(240, 245, 250, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+      border-left: 3px solid var(--secondary-blue);
+    }
+    
+    .info-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: white;
+    }
+    
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--secondary-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+      font-size: 17px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .info-label {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+    
+    .info-value {
+      font-size: 15px;
+      color: var(--primary-blue);
+      font-weight: 1000;
+    }
+    
+    /* Results Table - Modernized */
+    .results-container {
+      margin-top: 25px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .results-header {
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      color: white;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .results-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .results-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .results-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 17px;
+      table-layout: fixed; /* Ensure columns respect width */
+    }
+    
+    .results-table thead th {
+      background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+      color: white;
+      padding: 16px 20px;
+      text-align: center;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      width: 25%; /* Make columns equal width */
+    }
+    
+    .results-table tbody td {
+      padding: 14px 20px;
+      border-bottom: 1px solid #e0e6ed;
+      text-align: center;
+    }
+    
+    .results-table tbody tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    
+    .results-table tbody tr:hover {
+      background-color: #f1f7fe;
+    }
+    
+    .subject-name {
+      font-weight: 600;
+      color: var(--primary-blue);
+      text-align: left;
+    }
+    
+    .grade-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .grade-value {
+      font-weight: 600;
+      margin-right: 10px;
+      min-width: 30px;
+    }
+    
+    .grade-progress {
+      flex-grow: 1;
+      height: 8px;
+      background: #e0e6ed;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .grade-progress-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    
+    .performance-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    /* Performance Colors */
+    .excellent { background-color: #00c853; }
+    .good { background-color: #64dd17; }
+    .average { background-color: #ffab00; }
+    .poor { background-color: #ff6d00; }
+    .fail { background-color: #dd2c00; }
+    
+    /* Summary Cards - Modernized */
+    .summary-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .summary-card {
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border-top: 4px solid;
+    }
+    
+    .summary-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .total-card {
+      background: linear-gradient(135deg, #f0f7ff, #e3f2fd);
+      border-top-color: var(--primary-blue);
+    }
+    
+    .average-card {
+      background: linear-gradient(135deg, #f0fff4, #e8f5e9);
+      border-top-color: var(--success-green);
+    }
+    
+    .status-card {
+      background: linear-gradient(135deg, #fff5f5, #ffebee);
+      border-top-color: var(--danger-red);
+    }
+    
+    .success-status {
+      background: linear-gradient(135deg, #f0fff4, #e8f5e9) !important;
+      border-top-color: var(--success-green) !important;
+    }
+    
+    .summary-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    
+    .summary-value {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 15px 0;
+      color: var(--primary-blue);
+    }
+    
+    .success-status .summary-value {
+      color: var(--success-green);
+    }
+    
+    .summary-desc {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    /* Final Comment - Modernized */
+    .final-comment {
+      background: #fffcf0;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 30px;
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .comment-header {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .comment-header::before {
+      content: "💡";
+      margin-right: 12px;
+      font-size: 24px;
+      color: var(--accent-gold);
+    }
+    
+    .comment-content {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+    
+    /* Print Button - Modernized */
+    .print-button {
+      margin-top: 30px;
+      background: linear-gradient(135deg, var(--success-green), #5cb85c);
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(40,167,69,0.3);
+    }
+    
+    .print-button:hover {
+      background: linear-gradient(135deg, #218838, var(--success-green));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(40,167,69,0.4);
+    }
+    
+    .print-button:active {
+      transform: translateY(0);
+    }
+    
+    /* Grading Scale - Modernized */
+    .grading-scale {
+      margin-top: 30px;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid #6c757d;
+    }
+    
+    .grading-scale h4 {
+      color: var(--primary-blue);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .grading-scale h4::before {
+      content: "📊";
+      margin-right: 12px;
+      font-size: 24px;
+    }
+    
+    .grading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    
+    .grading-table th, 
+    .grading-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #e0e6ed;
+    }
+    
+    .grading-table th {
+      background-color: #f8f9fa;
+      color: #495057;
+      font-weight: 600;
+    }
+    
+    .grading-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    
+    .grading-table tr:hover {
+      background-color: #f1f5f9;
+    }
+    
+    .letter-grade {
+      font-weight: bold;
+      width: 60px;
+    }
+    
+    .grade-A { color: var(--success-green); }
+    .grade-B { color: var(--secondary-blue); }
+    .grade-C { color: var(--warning-orange); }
+    .grade-D { color: #fd7e14; }
+    .grade-F { color: var(--danger-red); }
+    
+    /* Signature - Modernized */
+    .signature {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      border-left: 4px solid var(--secondary-blue);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .signature p {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .signature strong {
+      color: var(--primary-blue);
+    }
+    
+    .signature a {
+      color: var(--secondary-blue);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .signature a:hover {
+      color: var(--primary-blue);
+      text-decoration: underline;
+    }
+    
+    /* Footer - Modernized */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    
+    .footer a {
+      color: var(--secondary-blue);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer a:hover {
+      color: var(--primary-blue);
+      text-decoration: underline;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+        margin: 15px;
+      }
+      
+      .school-name {
+        font-size: 26px;
+      }
+      
+      .exam-title {
+        font-size: 22px;
+      }
+      
+      .info-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .summary-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .results-table thead {
+        display: none;
+      }
+      
+      .results-table tr {
+        display: block;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #e0e6ed;
+      }
+      
+      .results-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        text-align: right;
+      }
+      
+      .results-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--primary-blue);
+        margin-right: auto;
+        padding-right: 20px;
+      }
+       .results-table .subject-name {
+        text-align: right;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    /* --- STYLES FOR WINNER/LOSER ANIMATION --- */
+    #winner-animation, #loser-animation {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        display: flex; /* Changed from none to flex by JS */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: green;
+        flex-direction: column;
+        backdrop-filter: blur(5px);
+    }
+
+    .animation-content {
+        animation: zoomIn 0.5s ease-in-out;
+    }
+
+    .animation-content h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        margin-bottom: 1rem;
+    }
+
+    .animation-content p {
+        font-size: 1.5rem;
+    }
+    
+    .trophy {
+        font-size: 8rem;
+        animation: bounce 0.5s infinite;
+    }
+
+    .fail-icon {
+        font-size: 8rem;
+    }
+
+    @keyframes zoomIn {
+        from { transform: scale(0.5); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+    /* --- END OF ANIMATION STYLES --- */
+
+    /* --- NEW: ANIMATED BORDER FOR SUMMARY CARDS --- */
+    @keyframes spin-gradient {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+/* Summary Card */
+.summary-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    padding: 20px;
+    background: #ffffff;
+    z-index: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Spin Gradient Animation */
+@keyframes spin-gradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animated Border */
+.summary-card::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 180deg at 50% 50%,
+        var(--primary-blue), 
+        var(--secondary-blue), 
+        var(--success-green), 
+        var(--accent-gold), 
+        var(--primary-blue)
+    );
+    animation: spin-gradient 4s linear infinite;
+    z-index: -2; /* Place it behind the card's background */
+ }
+
+ /* This layer creates the "hole" showing the original background */
+    .summary-card::after {
+        content: '';
+        position: absolute;
+        inset: 4px; /* This defines the border thickness */
+        background: inherit; /* Use the card's original background */
+        border-radius: 10px; /* Should be (card radius - inset value) */
+        z-index: -1; /* On top of the gradient, but behind content */
+    }
+    /* --- END OF NEW ANIMATION STYLES --- */
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Modern Header Section -->
+    <div class="header-section">
+      <h1 class="school-name">DUGSIGA HOOSE, DHEXE IYO SARE EE HAGARDIID</h1>
+      <h2 class="exam-title">NATIIJADA IMTIXAANKA NAKHLIGA</h2>
+      <div class="academic-year">SANAD DUGSIYEEDKA 2024-2025</div>
+    </div>
+    
+    <!-- Registration Input Section -->
+    <div class="registration-section">
+      <label for="regInput" class="input-title">
+        <i class="fas fa-id-card"></i> Tira-taxaneha Dugsiga
+      </label>
+      <input 
+        type="number" 
+        id="regInput" 
+        class="input-field" 
+        placeholder="geli lambarkaaga tira-taxanaha (tusaale: 001)"
+        aria-label="Geli lambarkaaga tira-taxanaha"
+        inputmode="numeric"
+        pattern="[0-9]*"
+      >
+      <button class="submit-btn" onclick="showResult()">
+        <i class="fas fa-search"></i> U Gudub Aragtida Natiijadaada
+      </button>
+    </div>
+
+    <div id="result" class="fade-in"></div>
+
+    <button class="print-button" onclick="window.print()" style="display:none;" id="printBtn">
+      <i class="fas fa-download"></i> Ladag Natiijada ama Daabac
+    </button>
+    
+    <!-- Grading Scale Section - Compact Design -->
+<div class="grading-scale-compact">
+  <h4><i class="fas fa-graduation-cap"></i> Miisaanka Xuruuf-Darajeedka (Letter Grade Scale)</h4>
+  
+  <div class="grade-scale-container">
+    <!-- First Row of Grades -->
+    <div class="grade-scale-row">
+      <div class="grade-box grade-a-plus">
+        <div class="grade-letter">A+</div>
+        <div class="grade-range"><strong>95-100</strong></div>
+      </div>
+      <div class="grade-box grade-a">
+        <div class="grade-letter">A</div>
+        <div class="grade-range"><strong>90-94</strong></div>
+      </div>
+      <div class="grade-box grade-a-minus">
+        <div class="grade-letter">A-</div>
+        <div class="grade-range"><strong>85-89</strong></div>
+      </div>
+      <div class="grade-box grade-b-plus">
+        <div class="grade-letter">B+</div>
+        <div class="grade-range"><strong>80-84</strong></div>
+      </div>
+      <div class="grade-box grade-b">
+        <div class="grade-letter">B</div>
+        <div class="grade-range"><strong>75-79</strong></div>
+      </div>
+      <div class="grade-box grade-b-minus">
+        <div class="grade-letter">B-</div>
+        <div class="grade-range"><strong>70-74</strong></div>
+      </div>
+      <div class="grade-box grade-c-plus">
+        <div class="grade-letter">C+</div>
+        <div class="grade-range"><strong>65-69</strong></div>
+      </div>
+    </div>
+    
+    <!-- Second Row of Grades -->
+    <div class="grade-scale-row">
+      <div class="grade-box grade-c">
+        <div class="grade-letter">C</div>
+        <div class="grade-range"><strong>60-64</strong></div>
+      </div>
+      <div class="grade-box grade-c-minus">
+        <div class="grade-letter">C-</div>
+        <div class="grade-range"><strong>50-59</strong></div>
+      </div>
+      <div class="grade-box grade-d">
+        <div class="grade-letter">D</div>
+        <div class="grade-range"><strong>40-49</strong></div>
+      </div>
+      <div class="grade-box grade-e">
+        <div class="grade-letter">E</div>
+        <div class="grade-range"><strong>20-39</strong></div>
+      </div>
+      <div class="grade-box grade-f">
+        <div class="grade-letter">F</div>
+        <div class="grade-range"><strong>0-19</strong></div>
+      </div>
+      <div class="grade-box empty"></div>
+      <div class="grade-box empty"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Compact Grading Scale Styles */
+  .grading-scale-compact {
+    margin-top: 30px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 3px solid #6c757d;
+  }
+  
+  .grading-scale-compact h4 {
+    color: #002060;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .grade-scale-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .grade-scale-row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .grade-box {
+    flex: 1;
+    min-width: 0;
+    border-radius: 6px;
+    padding: 10px 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
+  
+  .grade-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+  
+  .grade-letter {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: white;
+  }
+  
+  .grade-range {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+  }
+  
+  /* Softer grade colors */
+  .grade-a-plus { background: #4CAF50; }
+  .grade-a { background: #66BB6A; }
+  .grade-a-minus { background: #81C784; }
+  .grade-b-plus { background: #5C9EFF; }
+  .grade-b { background: #4285F4; }
+  .grade-b-minus { background: #7BAAF7; }
+  .grade-c-plus { background: #FFB74D; }
+  .grade-c { background: #FFA726; color: #333; }
+  .grade-c-minus { background: #FF8A65; }
+  .grade-d { background: #FF7043; }
+  .grade-e { background: #FF5722; }
+  .grade-f { background: #78909C; }
+  .empty { visibility: hidden; }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .grade-scale-row {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .grade-box {
+      min-width: calc(33% - 8px);
+      padding: 8px 4px;
+    }
+    
+    .grade-letter {
+      font-size: 16px;
+    }
+    
+    .grade-range {
+      font-size: 11px;
+    }
+    
+    .empty {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .grade-box {
+      min-width: calc(50% - 8px);
+    }
+  }
+</style>
+
+<div class="signature">
+    <p><strong><i class="fas fa-user"></i>   MAAMULE MAHAD AXMED MAXAMUUD</strong></p>
+    <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/252618954465">Mahad</a><br>
+    <i class="fas fa-envelope"></i> Email: <a href="mailto:Hagardiidschool@gmail.com">Hagardiidschool@gmail.com</a><br>
+    <i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/100063989441966">Hagardiid PSS</a><br>
+    <i class="fas fa-location-dot"></i>Degmada Wadajir<br>
+</div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; <strong>2025 | TAMIIM. All rights reserved.</p>
+      <p style="color: var(--secondary-blue); font-size: 15px; margin-top: 5px;">
+        Wixii cabasho ah oo ku saabsan natiijada Imtixaanka, fadlan gaadh xafiiska imtixaannada dugsiga. Ama la xidhiidh <a href="tel:+252613999880">📞+252613999880</a>
+      </p>
+      <p style="margin-top: 10px;">Printed on: <span id="printDate"></span></p>
+    </div>
+  </div>
+
+  <!-- Animation Overlays -->
+  <div id="winner-animation" style="display: none;">
+      <div class="animation-content">
+          <div class="trophy">🏆</div>
+          <h1>Hambalyo!</h1>
+          <p>Horumar Wacan!</p>
+      </div>
+  </div>
+
+  <div id="loser-animation" style="display: none;">
+      <div class="animation-content">
+          <div class="fail-icon">😞</div>
+          <h1>Waan Ka Xumahay!</h1>
+          <p></p>
+      </div>
+  </div>
+
+  <script>
+    // Faallooyinka gaarka ah
+    const studentComments = {
+        "001": "waxaad muujisay karti iyo dedaal aad u wanaagsan. waxaad ku guulaysatay inaad noqoto ardayda ugu fiican fasalka! 🎉Horumar wanaagsan!",
+        "002": "waxaad u baahan tahay inaad sii kobciso maadooyinka Bayoolijiga, Juqraafiga iyo kuwa luuqadaha.",
+        "003": "waan ka xumahay si aad u hesho ama aad u aragto natiijadaada imtixaanka, fadlan iska xali xafiiska maaliyadda dugsiga.",
+        "3531887": "waan ka xumahay si aad u hesho ama aad u aragto natiijadaada imtixaanka, fadlan iska xali xafiiska maaliyadda dugsiga.",
+        "3531891": "waan ka xumahay si aad u hesho ama aad u aragto natiijadaada imtixaanka, fadlan iska xali xafiiska maaliyadda dugsiga.",
+        "3531871": "waan ka xumahay si aad u hesho ama aad u aragto natiijadaada imtixaanka, fadlan iska xali xafiiska maaliyadda dugsiga.",
+        "3531848": "waan ka xumahay si aad u hesho ama aad u aragto natiijadaada imtixaanka, fadlan iska xali xafiiska maaliyadda dugsiga.",
+        "3531894": "Hambalyo! Waxaad ku guuleysatay inaad noqoto ardeyadda kaalinta 1aad kaga jirta fasalka iyo ardeyadda 1aad ee ugu sarreysa dhammaan natiijada ardeyda kale ee dugsiga sare. 🎉 Horumar wanaagsan!",
+        "3531897": "Hambalyo! Waxaad ku guuleysatay inaad noqoto ardeyga kaalinta 2aad kaga jira fasalka iyo ardeyga 3aad ee ugu sarreya dhammaan natiijada ardeyda kale ee dugsiga sare.",
+        "3531889": "Hambalyo! Waxaad muujisay karti iyo dedaal aad u wanaagsan. Waxaad ku guulaysatay inaad noqoto ardeyadda kaalinta 3aad kaga jirta fasalka.",
+        "3531859": "Hambalyo! Waxaad ku guuleysatay inaad noqoto ardeyadda kaalinta 1aad kaga jirta fasalka iyo ardeyadda 2aad ee ugu sarreysa dhammaan natiijada ardeyda kale ee dugsiga sare.",
+        "3531862": "Hambalyo! Waxaad muujisay karti iyo dedaal aad u wanaagsan. Waxaad ku guulaysatay inaad noqoto ardeyadda kaalinta 2aad kaga jirta fasalka.",
+        "3531878": "Hambalyo! Waxaad muujisay karti iyo dedaal aad u wanaagsan. Waxaad ku guulaysatay inaad noqoto ardeyadda kaalinta 2aad kaga jirta fasalka.",
+        "3531856": "Hambalyo! Waxaad muujisay karti iyo dedaal aad u wanaagsan. Waxaad ku guulaysatay inaad noqoto ardeyadda kaalinta 1aad kaga jirta fasalka.",
+        "3531846": "Hambalyo! Waxaad muujisay karti iyo dedaal aad u wanaagsan. Waxaad ku guulaysatay inaad noqoto ardeyadda kaalinta 2aad kaga jirta fasalka.",
+        "3531858": "Hambalyo! Waxaad muujisay karti iyo dedaal aad u wanaagsan. Waxaad ku guulaysatay inaad noqoto ardeyadda kaalinta 3aad kaga jirta fasalka.",
+    };
+
+    const students = [
+      {
+        regNo: "001",
+        name: "Sultaan Faatix",
+        motherName: "Hani Cumar Maxamuud",
+        class: "Form 0",
+        year: "2024-2025",
+        results: {
+          Xisaab: 90,
+          Fisigis: 89,
+          Bayooliji: 95,
+          Kimistari: 80,
+          Soomaali: 70,
+          Carabi: 90,
+          Ingiriisi: 88,
+          Juqraafi: 100,
+          Taariikh: 88,
+          Tarbiya: 100,
+          Teknooloji: 88,
+          Ganacsi: 100,
+        },
+      },
+      {
+        regNo: "002",
+        name: "Xayaat Faatix",
+        motherName: "Hani Cumar Maxamuud",
+        class: "Form 0",
+        year: "2024-2025",
+        results: {
+          Xisaab: 70,
+          Fisigis: 75,
+          Bayooliji: 55,
+          Kimistari: 80,
+          Soomaali: 65,
+          Carabi: 60,
+          Ingiriisi: 58,
+          Juqraafi: 60,
+          Taariikh: 88,
+          Tarbiya: 100,
+          Teknooloji: 84,
+          Ganacsi: 100,
+        },
+      },
+      {
+        regNo: "003",
+        name: "Xanaan Faatix",
+        motherName: "Hani Cumar Maxamuud",
+        class: "Form 0",
+        year: "2024-2025",
+        results: {
+          Xisaab: 0,
+          Fisigis: 0,
+          Bayooliji: 0,
+          Kimistari: 0,
+          Soomaali: 0,
+          Carabi: 0,
+          Ingiriisi: 0,
+          Juqraafi: 0,
+          Taariikh: 0,
+          Tarbiya: 0,
+          Teknooloji: 0,
+          Ganacsi: 0,
+    }
+  },
+  {
+    "regNo": "3531887",
+    "name": "Aniso Khaliif Cali Afrax",
+    "motherName": "Amran Cabdule Cumar",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 0.00,
+      "Soomaali": 0.00,
+      "Carabi": 0.00,
+      "Xisaab": 0.00,
+      "Ingiriisi": 0.00,
+      "Bayooliji": 0.00,
+      "Kimistari": 0.00,
+      "Fisigis": 0.00,
+      "Juqraafi": 0.00,
+      "Taariikh": 0.00,
+      "Teknooloji": 0.00,
+      "Ganacsi": 0.00
+    }
+  },
+  {
+    "regNo": "3531888",
+    "name": "Aways Cusmaan Cadaan Subiye",  
+    "motherName": "Shukri Calasow Maxamed",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 66.00,
+      "Soomaali": 76.00,
+      "Carabi": 77.00,
+      "Xisaab": 55.00,
+      "Ingiriisi": 70.00,
+      "Bayooliji": 43.00,
+      "Kimistari": 49.00,
+      "Fisigis": 74.00,
+      "Juqraafi": 90.00,
+      "Taariikh": 65.00,
+      "Teknooloji": 67.00,
+      "Ganacsi": 83.00
+    }
+  },
+  {
+    "regNo": "3531889",
+    "name": "Balqiso Muuse Maxamad Axmad",
+    "motherName": "Xaliimo Cali Xasan",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 72.00,
+      "Soomaali": 77.00,
+      "Carabi": 81.00,
+      "Xisaab": 67.00,
+      "Ingiriisi": 60.00,
+      "Bayooliji": 68.00,
+      "Kimistari": 58.00,
+      "Fisigis": 88.00,
+      "Juqraafi": 96.00,
+      "Taariikh": 69.00,
+      "Teknooloji": 91.00,
+      "Ganacsi": 85.00
+    }
+  },
+  {
+    "regNo": "3531890",
+    "name": "Cabdulqadir Cabdi Cumar Kulmiye",
+    "motherName": "Madiino Xasan Macow",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 62.00,
+      "Soomaali": 69.00,
+      "Carabi": 78.00,
+      "Xisaab": 45.00,
+      "Ingiriisi": 76.00,
+      "Bayooliji": 27.00,
+      "Kimistari": 46.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 84.00,
+      "Taariikh": 58.00,
+      "Teknooloji": 71.00,
+      "Ganacsi": 62.00
+    }
+  },
+  {
+    "regNo": "3531891",
+    "name": "Cali Cabdullaahi Maxamuud Cadow",  
+    "motherName": "Seynab Maxamuud Maxamad",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 0.00,
+      "Soomaali": 0.00,
+      "Carabi": 0.00,
+      "Xisaab": 0.00,
+      "Ingiriisi": 0.00,
+      "Bayooliji": 0.00,
+      "Kimistari": 0.00,
+      "Fisigis": 0.00,
+      "Juqraafi": 0.00,
+      "Taariikh": 0.00,
+      "Teknooloji": 0.00,
+      "Ganacsi": 0.00
+    }
+  },
+  {
+    "regNo": "3531892",
+    "name": "Cumar Muxudiin Xuseen Faarax",
+    "motherName": "Seynab Xuseen Geeddi",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 66.00,
+      "Soomaali": 70.00,
+      "Carabi": 66.00,
+      "Xisaab": 65.00,
+      "Ingiriisi": 69.00,
+      "Bayooliji": 46.00,
+      "Kimistari": 78.00,
+      "Fisigis": 86.00,
+      "Juqraafi": 84.00,
+      "Taariikh": 88.00,
+      "Teknooloji": 92.00,
+      "Ganacsi": 64.00
+    }
+  },
+  {
+    "regNo": "3531893",
+    "name": "Deeqo Maxamad Nur Gacal",
+    "motherName": "Raxmo Adan Cabdulle",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 64.00,
+      "Soomaali": 68.00,
+      "Carabi": 78.00,
+      "Xisaab": 55.00,
+      "Ingiriisi": 49.00,
+      "Bayooliji": 29.00,
+      "Kimistari": 34.00,
+      "Fisigis": 82.00,
+      "Juqraafi": 70.00,
+      "Taariikh": 45.00,
+      "Teknooloji": 46.00,
+      "Ganacsi": 87.00
+    }
+  },
+  {
+    "regNo": "3531894",  
+    "name": "Fardowso Daa'uud Maxamad Jimcaale",
+    "motherName": "Qaali Axmad Xuseen",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 92.00,
+      "Soomaali": 90.00,
+      "Carabi": 100.00,
+      "Xisaab": 80.00,
+      "Ingiriisi": 80.00,
+      "Bayooliji": 62.00,
+      "Kimistari": 82.00,
+      "Fisigis": 96.00,
+      "Juqraafi": 100.00,
+      "Taariikh": 100.00,
+      "Teknooloji": 98.00,
+      "Ganacsi": 95.00
+    }
+  },
+  {
+    "regNo": "3531895",
+    "name": "Farxiyo Xasan Maxamuud Qaasim",
+    "motherName": "Xabibo Maxamuud Aadan",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 60.00,
+      "Soomaali": 59.00,
+      "Carabi": 62.00,
+      "Xisaab": 71.00,
+      "Ingiriisi": 72.00,
+      "Bayooliji": 72.00,
+      "Kimistari": 81.00,
+      "Fisigis": 88.00,
+      "Juqraafi": 96.00,
+      "Taariikh": 94.00,
+      "Teknooloji": 67.00,
+      "Ganacsi": 85.00
+    }
+  },
+  {
+    "regNo": "3531896",
+    "name": "Ismaaciil Cabdi Cumar Calasow",
+    "motherName": "Luuleey Muuse Cumar",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 54.00,
+      "Soomaali": 73.00,
+      "Carabi": 48.00,
+      "Xisaab": 54.00,
+      "Ingiriisi": 71.00,
+      "Bayooliji": 42.00,
+      "Kimistari": 53.00,
+      "Fisigis": 70.00,
+      "Juqraafi": 96.00,
+      "Taariikh": 75.00,
+      "Teknooloji": 70.00,
+      "Ganacsi": 76.00
+    }
+  },
+  {
+    "regNo": "3531897",
+    "name": "Liibaan Cali Axmed Maxamed",
+    "motherName": "Madiino Gojodax Cali",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 84.00,
+      "Soomaali": 68.00,
+      "Carabi": 83.00,
+      "Xisaab": 85.00,
+      "Ingiriisi": 80.00,
+      "Bayooliji": 78.00,
+      "Kimistari": 76.00,
+      "Fisigis": 86.00,
+      "Juqraafi": 89.00,
+      "Taariikh": 98.00,
+      "Teknooloji": 91.00,
+      "Ganacsi": 91.00
+    }
+  },
+  {
+    "regNo": "3531900",
+    "name": "Maxamed Idow Xasan Maxamed",
+    "motherName": "Aamino Axmed Yabar",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 67.00,
+      "Soomaali": 87.00,
+      "Carabi": 62.00,
+      "Xisaab": 42.00,
+      "Ingiriisi": 49.00,
+      "Bayooliji": 29.00,
+      "Kimistari": 40.00,
+      "Fisigis": 64.00,
+      "Juqraafi": 90.00,
+      "Taariikh": 73.00,
+      "Teknooloji": 90.00,
+      "Ganacsi": 72.00
+    }
+  },
+  {
+    "regNo": "3531902",
+    "name": "Saabir Maxamad Shire Cabdi",
+    "motherName": "Samsam Maxamad Cusmaan",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 68.00,
+      "Soomaali": 50.00,
+      "Carabi": 82.00,
+      "Xisaab": 44.00,
+      "Ingiriisi": 52.00,
+      "Bayooliji": 49.00,
+      "Kimistari": 57.00,
+      "Fisigis": 26.00,
+      "Juqraafi": 95.00,
+      "Taariikh": 75.00,
+      "Teknooloji": 82.00,
+      "Ganacsi": 77.00
+
+    }
+  },
+  {
+    "regNo": "3531903",
+    "name": "Sahro Abuukar Xuseen Xasan",
+    "motherName": "Asmo Xaaji Xasan",
+    "class": "Form 3",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 0.00,
+      "Soomaali": 0.00,
+      "Carabi": 0.00,
+      "Xisaab": 0.00,
+      "Ingiriisi": 0.00,
+      "Bayooliji": 0.00,
+      "Kimistari": 0.00,
+      "Fisigis": 0.00,
+      "Juqraafi": 0.00,
+      "Taariikh": 0.00,
+      "Teknooloji": 0.00,
+      "Ganacsi": 0.00
+    }
+  },
+  {
+    "regNo": "3531859",
+    "name": "Asli Cusman Caddaan Suubiye",
+    "motherName": "Shukri Calasow Maxamed",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 73.00,
+      "Soomaali": 80.00,
+      "Carabi": 88.00,
+      "Xisaab": 94.00,
+      "Ingiriisi": 66.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 93.00,
+      "Juqraafi": 100.00,
+      "Taariikh": 100.00,
+      "Teknooloji": 93.00,
+      "Ganacsi": 91.00
+    }
+  },
+  {
+    "regNo": "3531862",
+    "name": "Bishaaro Maxamed Abuukar Ibraahim",
+    "motherName": "Xaawo Maxamad Cumar",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 77.00,
+      "Soomaali": 80.00,
+      "Carabi": 75.00,
+      "Xisaab": 94.00,
+      "Ingiriisi": 66.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 97.00,
+      "Juqraafi": 95.00,
+      "Taariikh": 98.00,
+      "Teknooloji": 92.00,
+      "Ganacsi": 91.00
+    }
+  },
+  {
+    "regNo": "3531863",
+    "name": "Cabdiqadar Muxamad Xusen Cumar",
+    "motherName": "Sirad Xasan Faroole",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 49.00,
+      "Soomaali": 80.00,
+      "Carabi": 44.00,
+      "Xisaab": 82.00,
+      "Ingiriisi": 52.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 90.00,
+      "Juqraafi": 84.00,
+      "Taariikh": 76.00,
+      "Teknooloji": 73.00,
+      "Ganacsi": 70.00
+    }
+  },
+  {
+    "regNo": "3531865",
+    "name": "Cabdiraxman Cali Xasan Faarax",
+    "motherName": "Faadumo Xaashi Axmed",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 32.00,
+      "Soomaali": 80.00,
+      "Carabi": 72.00,
+      "Xisaab": 86.00,
+      "Ingiriisi": 69.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 68.00,
+      "Juqraafi": 92.00,
+      "Taariikh": 80.00,
+      "Teknooloji": 98.00,
+      "Ganacsi": 71.00
+    }
+  },
+  {
+    "regNo": "3531866",
+    "name": "Cabdirisaaq Maxamed Cumar Cibaar",
+    "motherName": "Maryan Macalin Daauud",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 44.00,
+      "Soomaali": 80.00,
+      "Carabi": 67.00,
+      "Xisaab": 61.00,
+      "Ingiriisi": 61.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 90.00,
+      "Juqraafi": 70.00,
+      "Taariikh": 48.00,
+      "Teknooloji": 58.00,
+      "Ganacsi": 62.00
+    }
+  },
+  {
+    "regNo": "3531867",
+    "name": "Cabdirisaaq Muxudiin Xuseen Faarax",
+    "motherName": "Seynab Xuseen Geedi",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 63.00,
+      "Soomaali": 80.00,
+      "Carabi": 68.00,
+      "Xisaab": 76.00,
+      "Ingiriisi": 65.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 69.00,
+      "Juqraafi": 90.00,
+      "Taariikh": 66.00,
+      "Teknooloji": 70.00,
+      "Ganacsi": 66.00
+    }
+  },
+  {
+    "regNo": "3531869",
+    "name": "Cabdullaahi Xasan Abuukar Cabdi",
+    "motherName": "Suule Cabdiraxman Cabdi",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 58.00,
+      "Soomaali": 80.00,
+      "Carabi": 72.00,
+      "Xisaab": 76.00,
+      "Ingiriisi": 59.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 94.00,
+      "Juqraafi": 75.00,
+      "Taariikh": 71.00,
+      "Teknooloji": 94.00,
+      "Ganacsi": 76.00
+    }
+  },
+  {
+    "regNo": "3531870",
+    "name": "Cabdulqaadir Maxamad Shire Cabdi",
+    "motherName": "Zamzam Maxamad Cismaan",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 57.00,
+      "Soomaali": 80.00,
+      "Carabi": 57.00,
+      "Xisaab": 68.00,
+      "Ingiriisi": 57.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 67.00,
+      "Juqraafi": 85.00,
+      "Taariikh": 80.00,
+      "Teknooloji": 90.00,
+      "Ganacsi": 54.00
+    }
+  },
+  {
+    "regNo": "3531871",
+    "name": "Cabduqadir Faarax Taakow Maxamuud",
+    "motherName": "Zeynab Nuur Maxamad",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 0.00,
+      "Soomaali": 0.00,
+      "Carabi": 0.00,
+      "Xisaab": 0.00,
+      "Ingiriisi": 0.00,
+      "Bayooliji": 0.00,
+      "Kimistari": 0.00,
+      "Fisigis": 0.00,
+      "Juqraafi": 0.00,
+      "Taariikh": 0.00,
+      "Teknooloji": 0.00,
+      "Ganacsi": 0.00
+    }
+  },
+  {
+    "regNo": "3531872",
+    "name": "Cali Maxamuud Cabdulle Cumar",
+    "motherName": "Xawo Xasan Maxamed",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 64.00,
+      "Soomaali": 80.00,
+      "Carabi": 86.00,
+      "Xisaab": 84.00,
+      "Ingiriisi": 63.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 73.00,
+      "Juqraafi": 94.00,
+      "Taariikh": 68.00,
+      "Teknooloji": 88.00,
+      "Ganacsi": 53.00
+    }
+  },
+  {
+    "regNo": "3531873",
+    "name": "Fartuun Muxudiin Cali Weydow",
+    "motherName": "Xakiimo Jimcaale Jilacow",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 57.00,
+      "Soomaali": 80.00,
+      "Carabi": 89.00,
+      "Xisaab": 86.00,
+      "Ingiriisi": 64.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 90.00,
+      "Juqraafi": 84.00,
+      "Taariikh": 88.00,
+      "Teknooloji": 93.00,
+      "Ganacsi": 83.00
+    }
+  },
+  {
+    "regNo": "3531874",
+    "name": "Kifaayo Cali Xasan Cali",
+    "motherName": "Ubax Cabdulqaadir Cabdulle",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 74.00,
+      "Soomaali": 80.00,
+      "Carabi": 70.00,
+      "Xisaab": 82.00,
+      "Ingiriisi": 53.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 73.00,
+      "Juqraafi": 94.00,
+      "Taariikh": 88.00,
+      "Teknooloji": 83.00,
+      "Ganacsi": 77.00
+    }
+  },
+  {
+    "regNo": "3531875",
+    "name": "Liibaan Cumar Abuukar Maxamed",
+    "motherName": "Faadumo Cabduqadir Saciid",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 57.00,
+      "Soomaali": 80.00,
+      "Carabi": 55.00,
+      "Xisaab": 62.00,
+      "Ingiriisi": 41.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 72.00,
+      "Juqraafi": 74.00,
+      "Taariikh": 75.00,
+      "Teknooloji": 69.00,
+      "Ganacsi": 80.00
+    }
+  },
+  {
+    "regNo": "3531878",
+    "name": "Nasro Xuseen Axmad Maxamuud",
+    "motherName": "Aamino Caddan Suubiye",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 85.00,
+      "Soomaali": 80.00,
+      "Carabi": 92.00,
+      "Xisaab": 92.00,
+      "Ingiriisi": 78.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 85.00,
+      "Juqraafi": 84.00,
+      "Taariikh": 80.00,
+      "Teknooloji": 93.00,
+      "Ganacsi": 93.00
+    }
+  },
+  {
+    "regNo": "3531879",
+    "name": "Qadro Muuse Maxamad Calasow",
+    "motherName": "Sacdiyo Xuseen Cali",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 52.00,
+      "Soomaali": 80.00,
+      "Carabi": 63.00,
+      "Xisaab": 76.00,
+      "Ingiriisi": 65.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 84.00,
+      "Juqraafi": 94.00,
+      "Taariikh": 83.00,
+      "Teknooloji": 91.00,
+      "Ganacsi": 91.00
+    }
+  },
+  {
+    "regNo": "3531880",
+    "name": "Saabiriin Abuukar Jeylaani Xaaji",
+    "motherName": "Raxmo Aadan Cabdulle",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 73.00,
+      "Soomaali": 80.00,
+      "Carabi": 53.00,
+      "Xisaab": 75.00,
+      "Ingiriisi": 33.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 69.00,
+      "Taariikh": 60.00,
+      "Teknooloji": 40.00,
+      "Ganacsi": 40.00
+    }
+  },
+  {
+    "regNo": "3531881",
+    "name": "Sacdiyo Cumar Cabdulle Hilowle",
+    "motherName": "Caasho Axmad Afrax",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 70.00,
+      "Soomaali": 80.00,
+      "Carabi": 76.00,
+      "Xisaab": 86.00,
+      "Ingiriisi": 64.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 83.00,
+      "Juqraafi": 100.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 85.00,
+      "Ganacsi": 85.00
+    }
+  },
+  {
+    "regNo": "3531883",
+    "name": "Xasan Cali Xasan Cali",
+    "motherName": "Ubax Cabdiqaadir Cabdulle",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 53.00,
+      "Soomaali": 80.00,
+      "Carabi": 56.00,
+      "Xisaab": 68.00,
+      "Ingiriisi": 67.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 88.00,
+      "Juqraafi": 86.00,
+      "Taariikh": 83.00,
+      "Teknooloji": 67.00,
+      "Ganacsi": 60.00
+    }
+  },
+  {
+    "regNo": "3531884",
+    "name": "Zahra Abdullahi Mohamed Warsame",
+    "motherName": "Ayaan Abdalla Hassan",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 79.00,
+      "Soomaali": 80.00,
+      "Carabi": 65.00,
+      "Xisaab": 84.00,
+      "Ingiriisi": 64.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 88.00,
+      "Juqraafi": 81.00,
+      "Taariikh": 78.00,
+      "Teknooloji": 87.00,
+      "Ganacsi": 91.00
+    }
+  },
+  {
+    "regNo": "3531885",
+    "name": "Zeynab Abuukar Xuseen Xasan",
+    "motherName": "Asmo Sheikh Xasan",
+    "class": "Form 2",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 89.00,
+      "Soomaali": 80.00,
+      "Carabi": 52.00,
+      "Xisaab": 76.00,
+      "Ingiriisi": 47.00,
+      "Bayooliji": 70.00,
+      "Kimistari": 65.00,
+      "Fisigis": 83.00,
+      "Juqraafi": 84.00,
+      "Taariikh": 80.00,
+      "Teknooloji": 81.00,
+      "Ganacsi": 76.00
+    }
+  },
+  {
+    "regNo": "3531856",
+    "name": "Xasan Cabdullahi Nuur Mantaan",
+    "motherName": "Faadumo Xasan Saneey",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 97.00,
+      "Soomaali": 94.00,
+      "Carabi": 90.00,
+      "Xisaab": 86.00,
+      "Ingiriisi": 47.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 82.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 82.00,
+      "Ganacsi": 82.00
+    }
+  },
+  {
+    "regNo": "3531846",
+    "name": "Hibo Maxamad Cabdullaahi Dhuubow",
+    "motherName": "Leylo Xasan Abuukar",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 98.00,
+      "Soomaali": 95.00,
+      "Carabi": 90.00,
+      "Xisaab": 86.00,
+      "Ingiriisi": 55.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 80.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 76.00,
+      "Ganacsi": 74.00
+    }
+  },
+  {
+    "regNo": "3531858",
+    "name": "Zamzam Axmad Cumar Cadow",
+    "motherName": "Maryan Cabdullaahi Xuseen",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 80.00,
+      "Soomaali": 89.00,
+      "Carabi": 90.00,
+      "Xisaab": 88.00,
+      "Ingiriisi": 60.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 85.00,
+      "Juqraafi": 78.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 77.00,
+      "Ganacsi": 79.00
+    }
+  },
+  {
+    "regNo": "3531842",
+    "name": "Ciise Cusmaan Cabdiraxmaan Maxamad",
+    "motherName": "Maryan Maxamed Dhinbil",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 84.00,
+      "Soomaali": 86.00,
+      "Carabi": 100.00,
+      "Xisaab": 82.00,
+      "Ingiriisi": 60.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 80.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 75.00,
+      "Ganacsi": 66.00
+    }
+  },
+  {
+    "regNo": "3531844",
+    "name": "Dahabo Ibraahim Maxamed Ibraahim",
+    "motherName": "Xawo Cabdullaahi Maxamad",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 97.00,
+      "Soomaali": 86.00,
+      "Carabi": 90.00,
+      "Xisaab": 79.00,
+      "Ingiriisi": 47.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 78.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 74.00,
+      "Ganacsi": 80.00
+    }
+  },
+  {
+    "regNo": "3531845",
+    "name": "Deeqo Xasan Cali Aanis",
+    "motherName": "Madiino Maxamad Maxamuud",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 98.00,
+      "Soomaali": 93.00,
+      "Carabi": 90.00,
+      "Xisaab": 88.00,
+      "Ingiriisi": 53.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 78.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 76.00,
+      "Ganacsi": 55.00
+    }
+  },
+  {
+    "regNo": "3531855",
+    "name": "Suudi Cabdi Axmad Ibraahim",
+    "motherName": "Shariifo Muuke Cumar",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 96.00,
+      "Soomaali": 89.00,
+      "Carabi": 90.00,
+      "Xisaab": 84.00,
+      "Ingiriisi": 66.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 82.00,
+      "Juqraafi": 54.00,
+      "Taariikh": 85.00,
+      "Teknooloji": 79.00,
+      "Ganacsi": 76.00
+    }
+  },
+  {
+    "regNo": "3531857",
+    "name": "Xasan Maxamad Xasan Maxamuud",
+    "motherName": "Shariifo Maxamuud Axmad",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 87.00,
+      "Soomaali": 95.00,
+      "Carabi": 90.00,
+      "Xisaab": 83.00,
+      "Ingiriisi": 50.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 82.00,
+      "Taariikh": 88.00,
+      "Teknooloji": 56.00,
+      "Ganacsi": 73.00
+    }
+  },
+  {
+    "regNo": "3531840",
+    "name": "Cali Xasan Axmed Ibraahim",
+    "motherName": "Xaliimo Gacal Maxamuud",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 87.00,
+      "Soomaali": 83.00,
+      "Carabi": 100.00,
+      "Xisaab": 84.00,
+      "Ingiriisi": 64.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 90.00,
+      "Juqraafi": 48.00,
+      "Taariikh": 73.00,
+      "Teknooloji": 72.00,
+      "Ganacsi": 68.00
+    }
+  },
+  {
+    "regNo": "3531848",
+    "name": "Khadiijo Uweys Maxamad Xxuseen",
+    "motherName": "Faadumo Xasan Maxamad",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 0.00,
+      "Soomaali": 0.00,
+      "Carabi": 0.00,
+      "Xisaab": 0.00,
+      "Ingiriisi": 0.00,
+      "Bayooliji": 0.00,
+      "Kimistari": 0.00,
+      "Fisigis": 0.00,
+      "Juqraafi": 0.00,
+      "Taariikh": 0.00,
+      "Teknooloji": 0.00,
+      "Ganacsi": 0.00
+    }
+  },
+  {
+    "regNo": "3531847",
+    "name": "Khaalid Xasan Cali Caddaan",
+    "motherName": "Aamino Xasan Hadaafow",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 68.00,
+      "Soomaali": 84.00,
+      "Carabi": 90.00,
+      "Xisaab": 85.00,
+      "Ingiriisi": 60.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 86.00,
+      "Juqraafi": 43.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 67.00,
+      "Ganacsi": 65.00
+    }
+  },
+  {
+    "regNo": "3531853",
+    "name": "Safiyo Siciid Muxudiin Cadaw",
+    "motherName": "Siciido Maxamad Cali",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 75.00,
+      "Soomaali": 84.00,
+      "Carabi": 67.00,
+      "Xisaab": 81.00,
+      "Ingiriisi": 56.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 85.00,
+      "Juqraafi": 55.00,
+      "Taariikh": 88.00,
+      "Teknooloji": 76.00,
+      "Ganacsi": 68.00
+    }
+  },
+  {
+    "regNo": "3531854",
+    "name": "Sumayo Farxaan Xuseen Hilowle",
+    "motherName": "Istar Shuceyb Maxamuud",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 81.00,
+      "Soomaali": 96.00,
+      "Carabi": 90.00,
+      "Xisaab": 86.00,
+      "Ingiriisi": 45.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 84.00,
+      "Juqraafi": 54.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 52.00,
+      "Ganacsi": 55.00
+    }
+  },
+  {
+    "regNo": "3531850",
+    "name": "Maxamed Cabdi Maxamed Maxamuud",
+    "motherName": "Faay Axamed Maxamuud",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 73.00,
+      "Soomaali": 96.00,
+      "Carabi": 77.00,
+      "Xisaab": 84.00,
+      "Ingiriisi": 56.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 46.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 66.00,
+      "Ganacsi": 62.00
+    }
+  },
+  {
+    "regNo": "3531836",
+    "name": "Cabdisamad Shiiq Muuse Maxamad Rooble",
+    "motherName": "Sacdiyo Axmad Caroone",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 59.00,
+      "Soomaali": 76.00,
+      "Carabi": 89.00,
+      "Xisaab": 85.00,
+      "Ingiriisi": 36.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 86.00,
+      "Juqraafi": 56.00,
+      "Taariikh": 75.00,
+      "Teknooloji": 81.00,
+      "Ganacsi": 80.00
+    }
+  },
+  {
+    "regNo": "3531835",
+    "name": "Cabdisalaan Siciid Muxudiin Cadow",
+    "motherName": "Siciido Maxamed Cali",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 54.00,
+      "Soomaali": 79.00,
+      "Carabi": 79.00,
+      "Xisaab": 88.00,
+      "Ingiriisi": 51.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 65.00,
+      "Taariikh": 85.00,
+      "Teknooloji": 73.00,
+      "Ganacsi": 65.00
+    }
+  },
+  {
+    "regNo": "3531852",
+    "name": "Roodo Uweys Ibraahim Cali",
+    "motherName": "Sahro Cali Cabdi",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 63.00,
+      "Soomaali": 73.00,
+      "Carabi": 90.00,
+      "Xisaab": 66.00,
+      "Ingiriisi": 55.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 59.00,
+      "Taariikh": 85.00,
+      "Teknooloji": 76.00,
+      "Ganacsi": 70.00
+    }
+  },
+  {
+    "regNo": "3531841",
+    "name": "Cayndaruus Cabdiraxmaan Maxamed Cali",
+    "motherName": "Cayni Aadan Axmed",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 72.00,
+      "Soomaali": 84.00,
+      "Carabi": 78.00,
+      "Xisaab": 84.00,
+      "Ingiriisi": 60.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 45.00,
+      "Taariikh": 80.00,
+      "Teknooloji": 62.00,
+      "Ganacsi": 65.00
+    }
+  },
+  {
+    "regNo": "3531851",
+    "name": "Niciimo Shiiq Muuse Maxamad Rooble",
+    "motherName": "Sacdiyo Axmed Caroone",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 45.00,
+      "Soomaali": 92.00,
+      "Carabi": 90.00,
+      "Xisaab": 58.00,
+      "Ingiriisi": 53.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 58.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 86.00,
+      "Ganacsi": 52.00
+    }
+  },
+  {
+    "regNo": "3531831",
+    "name": "Axmed Maxamed Cumar Axmed",
+    "motherName": "Zaynab Axmed Jilicow",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 55.00,
+      "Soomaali": 81.00,
+      "Carabi": 71.00,
+      "Xisaab": 79.00,
+      "Ingiriisi": 54.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 51.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 72.00,
+      "Ganacsi": 55.00
+    }
+  },
+  {
+    "regNo": "3531839",
+    "name": "Cabdullaahi Cabdi Axmad Cali",
+    "motherName": "aamino xuseen cali",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 52.00,
+      "Soomaali": 85.00,
+      "Carabi": 85.00,
+      "Xisaab": 85.00,
+      "Ingiriisi": 20.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 90.00,
+      "Juqraafi": 55.00,
+      "Taariikh": 79.00,
+      "Teknooloji": 77.00,
+      "Ganacsi": 55.00
+    }
+  },
+  {
+    "regNo": "3531838",
+    "name": "Cabdraxmaan Maxamuud Cosobow Nuur",
+    "motherName": "Mako Maxamuud Shire",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 52.00,
+      "Soomaali": 72.00,
+      "Carabi": 81.00,
+      "Xisaab": 84.00,
+      "Ingiriisi": 41.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 87.00,
+      "Juqraafi": 63.00,
+      "Taariikh": 85.00,
+      "Teknooloji": 70.00,
+      "Ganacsi": 40.00
+    }
+  },
+  {
+    "regNo": "3531834",
+    "name": "Cabdinuur Ibraahim Maxamad Ibraahim",
+    "motherName": "Xaawo Cabdullahi Maxamad",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 61.00,
+      "Soomaali": 84.00,
+      "Carabi": 67.00,
+      "Xisaab": 81.00,
+      "Ingiriisi": 32.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 84.00,
+      "Juqraafi": 70.00,
+      "Taariikh": 75.00,
+      "Teknooloji": 67.00,
+      "Ganacsi": 50.00
+    }
+  },
+  {
+    "regNo": "3531833",
+    "name": "Cabdikarin Cabdulqaadir Ibribrahim Xaxasan",
+    "motherName": "Caasho Xuseen Aaxmad",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 69.00,
+      "Soomaali": 59.00,
+      "Carabi": 67.00,
+      "Xisaab": 81.00,
+      "Ingiriisi": 43.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 54.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 70.00,
+      "Ganacsi": 58.00
+    }
+  },
+  {
+    "regNo": "3531832",
+    "name": "Cabdikariin Abshir Xasan Maxamad",
+    "motherName": "Dahabo Bashiir Xasan",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 62.00,
+      "Soomaali": 82.00,
+      "Carabi": 59.00,
+      "Xisaab": 80.00,
+      "Ingiriisi": 25.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 81.00,
+      "Juqraafi": 60.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 58.00,
+      "Ganacsi": 53.00
+    }
+  },
+  {
+    "regNo": "3531849",
+    "name": "Mahad Barre Nuur Cali",
+    "motherName": "Nuuro Jimcaale Cumar",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 64.00,
+      "Soomaali": 72.00,
+      "Carabi": 67.00,
+      "Xisaab": 80.00,
+      "Ingiriisi": 50.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 80.00,
+      "Juqraafi": 45.00,
+      "Taariikh": 90.00,
+      "Teknooloji": 62.00,
+      "Ganacsi": 28.00
+    }
+  },
+  {
+    "regNo": "3531830",
+    "name": "Abuukar Maxamed Cumar Cibaar",
+    "motherName": "Maryan Maxamed Daud",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 53.00,
+      "Soomaali": 68.00,
+      "Carabi": 54.00,
+      "Xisaab": 81.00,
+      "Ingiriisi": 40.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 79.00,
+      "Juqraafi": 33.00,
+      "Taariikh": 83.00,
+      "Teknooloji": 78.00,
+      "Ganacsi": 40.00
+    }
+  },
+  {
+    "regNo": "3531837",
+    "name": "Cabdishakuur Cabdullaahi Maxamuud Cumar",
+    "motherName": "Farxiyo Cumar Mire",
+    "class": "Form 1",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 37.00,
+      "Soomaali": 40.00,
+      "Carabi": 50.00,
+      "Xisaab": 30.00,
+      "Ingiriisi": 24.00,
+      "Bayooliji": 80.00,
+      "Kimistari": 80.00,
+      "Fisigis": 50.00,
+      "Juqraafi": 60.00,
+      "Taariikh": 50.00,
+      "Teknooloji": 50.00,
+      "Ganacsi": 50.00
+    }
+  },
+  {
+    "regNo": "3005",
+    "name": "Caasha Maxamad Cabdullaahi",
+    "motherName": "Sahra Axmad",
+    "class": "5aad B",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 57.00,
+      "Soomaali": 83.00,
+      "Carabi": 87.00,
+      "Xisaab": 81.00,
+      "Saynis": 57.00,
+      "Cilmi_Bulsho ": 80.00,
+      "English": 83.00,
+      "Teknooloji": 78.00
+    }
+  },
+  {
+    "regNo": "3006",
+    "name": "Munasar Xasan Maxamad Maxamuud",
+    "motherName": "Sawda Iikar  Mire",
+    "class": "6aad A",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 70.00,
+      "Soomaali": 70.00,
+      "Carabi": 79.00,
+      "Xisaab": 61.00,
+      "Saynis": 98.00,
+      "Cilmi_Bulsho ": 94.00,
+      "English": 69.00,
+      "Teknooloji": 95.00
+    }
+  },
+  {
+    "regNo": "3007",
+    "name": "Sumaya Xasan Maxamad Maxamuud",
+    "motherName": "Sawdo Iikar  Mire",
+    "class": "6aad A",
+    "year": "2024-2025",
+    "results": {
+      "Tarbiya": 84.00,
+      "Soomaali": 90.00,
+      "Carabi": 71.00,
+      "Xisaab": 63.00,
+      "Saynis": 97.00,
+      "Cilmi_Bulsho ": 96.00,
+      "English": 70.00,
+      "Teknooloji": 86.00
+        },
+      }
+    ];
+
+    function getLetterGrade(score) {
+      if (score >= 95) return { grade: "A+", class: "grade-A" };
+      if (score >= 90) return { grade: "A", class: "grade-A" };
+      if (score >= 85) return { grade: "A-", class: "grade-A" };
+      if (score >= 80) return { grade: "B+", class: "grade-B" };
+      if (score >= 75) return { grade: "B", class: "grade-B" };
+      if (score >= 70) return { grade: "B-", class: "grade-B" };
+      if (score >= 65) return { grade: "C+", class: "grade-C" };
+      if (score >= 60) return { grade: "C", class: "grade-C" };
+      if (score >= 50) return { grade: "C-", class: "grade-C" };
+      if (score >= 40) return { grade: "D", class: "grade-D" };
+      if (score >= 20) return { grade: "E", class: "grade-F" };
+      return { grade: "F", class: "grade-F" };
+    }
+
+    function getComment(score) {
+        if (score >= 90) return "Heer Sare";
+        if (score >= 75) return "Aad u Wanaagsan";
+        if (score >= 60) return "Wanaagsan";
+        if (score >= 50) return "Dhexdhexaad";
+        return "Liita";
+    }
+
+    function showResult() {
+      const reg = document.getElementById('regInput').value.trim();
+      const student = students.find((s) => s.regNo === reg);
+
+      const printBtn = document.getElementById('printBtn');
+      if (!student) {
+        document.getElementById('result').innerHTML = `
+          <div style="background: #ffeeee; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center; border: 1px solid #ffcccc;">
+            <p style="color: #d32f2f; font-weight: bold; font-size: 16px;">
+             <i class="fas fa-exclamation-circle"></i>     Ma jiro tira-taxaneha aad gelisay. Fadlan iska hubi oo isku day mar kale.
+            </p>
+          </div>`;
+        printBtn.style.display = 'none';
+        return;
+      }
+
+      const subjects = Object.keys(student.results);
+      const scores = Object.values(student.results);
+      const total = scores.reduce((a, b) => a + b, 0);
+      const maxTotal = subjects.length * 100;
+      const avg = (total / maxTotal) * 100;
+      const status = avg >= 50 ? 'Gudbay' : 'Haray';
+      const statusClass = avg >= 50 ? 'pass' : 'fail';
+      
+      // Get overall letter grade
+      const overallLetterGrade = getLetterGrade(avg);
+
+      // Determine custom comment based on performance
+      let customComment = studentComments[student.regNo] || "";
+      if (!customComment) {
+          if (avg >= 90) {
+              customComment = "Masha Allah! Waxaad gaadhay heer sare oo tusaale u ah dedaalka, juhdiga, kartida, firfircoonida iyo waxqabadka wanaagsan.";
+          } else if (avg >= 75) {
+              customComment = "waxaad si wanaagsan u muujisay faham qoto dheer oo ku saabsan maadooyinka. Haddii aad xoogga saarto meelaha aad caqabada kala kulanto, waxaad gaari doontaa heerar ka sarreeya halka aad hadda joogto.";
+          } else if (avg >= 50) {
+              customComment = "waxaad muujisay dadaal muuqda oo tilmaamaya in aad ku jirto waddada saxda ah. Haddii aad xoogga saarto meelaha u baahan horumar iyo taageero, waxaad gaari doontaa heer sare. Sii wad dadaalkaaga.";
+          } else {
+              customComment = "ha niyad jebin, tani ma'aha dhammaad ee waa bilow cusub. Dadaal, la shaqee macallimiinta, hana quusan—waad gaadhi kadhaa guushaada!";
+          }
+      }
+
+      // --- TRIGGER ANIMATION ---
+      if (status === 'Gudbay') {
+          const winnerOverlay = document.getElementById('winner-animation');
+          winnerOverlay.style.display = 'flex';
+
+          // Trigger confetti
+          confetti({
+              particleCount: 1500,
+              spread: 360,
+              origin: { y: 0.6 },
+              zIndex: 1001
+          });
+
+          setTimeout(() => { 
+              winnerOverlay.style.display = 'none';
+          }, 4000); // Hide after 4 seconds
+      } else {
+          const loserOverlay = document.getElementById('loser-animation');
+          loserOverlay.style.display = 'flex';
+
+          setTimeout(() => {
+              loserOverlay.style.display = 'none';
+          }, 4000); // Hide after 1 seconds
+      }
+      // --- END OF ANIMATION TRIGGER ---
+
+      let resultHTML = `
+        <div class="student-info-container">
+          <div class="student-info-header">
+            <h3 class="student-info-title">MACLUUMAADKA ARDEYGA</h3>
+            <span class="student-info-badge">IMTIXAANKA GUUD</span>
+          </div>
+          
+          <div class="student-info-rows">
+            <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon"><i class="fas fa-id-card"></i></div>
+                  <div>
+                    <div class="info-label">Tira-taxanaha:</div>
+                    <div class="info-value">${student.regNo}</div>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon"><i class="fas fa-user-graduate"></i></div>
+                  <div>
+                    <div class="info-label">Magaca Ardeyga:</div>
+                    <div class="info-value">${student.name}<strong></div>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon"><i class="fas fa-female"></i></div>
+                  <div>
+                    <div class="info-label">Magaca Hooyada:</div>
+                    <div class="info-value">${student.motherName}</div>
+                  </div>
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon"><i class="fas fa-school"></i></div>
+                  <div>
+                    <div class="info-label">Fasalka:</div>
+                    <div class="info-value">${student.class}</div>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <div>
+                    <div class="info-label">Sanad Dugsiyeedka:</div>
+                    <div class="info-value">${student.year}</div>
+                  </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon" style="background-color: ${status === 'Gudbay' ? 'var(--success-green)' : 'var(--danger-red)'};">
+                        <i class="fas ${status === 'Gudbay' ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                    </div>
+                    <div>
+                        <div class="info-label">Go'aanka:</div>
+                        <div class="info-value" style="color: ${status === 'Gudbay' ? 'var(--success-green)' : 'var(--danger-red)'}; font-weight: bold;">
+                        ${status}
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-container">
+          <div class="results-header">
+            <h3 class="results-title">NATIIJADA MAADOOYINKA</h3> 
+            <span class="results-badge"></span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Maadada</th>
+                  <th>Dhibcaha (la rabo: 100)</th>
+                  <th>Darajada</th>
+                  <th>Faallo</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${subjects.map((subject, index) => {
+                  const score = scores[index];
+                  const letterGrade = getLetterGrade(score);
+                  const comment = getComment(score);
+                  const performanceClass = score >= 90 ? 'excellent' : score >= 75 ? 'good' : score >= 60 ? 'average' : score >= 50 ? 'poor' : 'fail';
+                  return `
+                    <tr>
+                      <td data-label="Maadada" class="subject-name">${subject}</td>
+                      <td data-label="Dhibcaha" class="grade-cell">
+                        <span class="grade-value">${score}</span>
+                        <div class="grade-progress">
+                          <div class="grade-progress-bar ${performanceClass}" style="width: ${score}%;"></div>
+                        </div>
+                      </td>
+                      <td data-label="Darajada">
+                        <span class="performance-indicator ${performanceClass}"></span>
+                        ${letterGrade.grade}
+                      </td>
+                      <td data-label="Faallo">${comment}</td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="summary-container">
+          <div class="summary-card total-card">
+            <div style="font-size: 40px; opacity: 0.1; position: absolute; right: 15px; top: 15px;"><i class="fas fa-calculator"></i></div>
+            <div class="summary-title">WADARTA</div>
+            <div class="summary-value">${total}</div>
+            <div class="summary-desc">Wadarta dhammaan daraasadaada</div>
+          </div>
+          
+          <div class="summary-card average-card">
+            <div style="font-size: 40px; opacity: 0.1; position: absolute; right: 15px; top: 15px;"><i class="fas fa-chart-line"></i></div>
+            <div class="summary-title">CELCELISKA</div>
+            <div class="summary-value">${avg.toFixed(1)}%</div>
+            <div class="summary-desc">Celceliska guud ee imtixaanka</div>
+          </div>
+          
+          <div class="summary-card status-card ${statusClass === 'pass' ? 'success-status' : ''}">
+            <div style="font-size: 40px; opacity: 0.1; position: absolute; right: 15px; top: 15px;">${statusClass === 'pass' ? '<i class="fas fa-trophy"></i>' : '<i class="fas fa-exclamation-triangle"></i>'}</div>
+            <div class="summary-title">GO'AANKA</div>
+            <div class="summary-value">${status} <span class="letter-grade ${overallLetterGrade.class}" style="font-size: 40px;">(${overallLetterGrade.grade})</span></div>
+            <div class="summary-desc">${statusClass === 'pass' ? 'Hambalyo, waxaad u gudubtay fasalka xiga!' : 'Ha niyad jabin, dedaal!'}</div>
+          </div>
+        </div>
+        
+        <div class="final-comment">
+            <div class="comment-header">Faallo Gaar ah</div>
+            <div class="comment-content">
+                 <strong>${student.name}</weak>, ${customComment}
+            </div>
+        </div>
+      `;
+      document.getElementById('result').innerHTML = resultHTML;
+      printBtn.style.display = 'flex';
+      document.getElementById('printDate').textContent = new Date().toLocaleString();
+    }
+
+    // Add event listener for Enter key on the input field
+    document.getElementById('regInput').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            showResult();
+        }
+    });
+  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024">
+  <title>ZEYN</title>
+  <style>
+    body {
+      font-family: Times New Roman, sans-serif;
+      width: 1080px;
+      margin: 0 auto;
+      background-color: white;
+    }
+    .container {
+      padding: 20px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+</body>
+</html>
